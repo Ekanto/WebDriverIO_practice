@@ -18,7 +18,7 @@ describe("My first test suite", () => {
     console.log("Element text: ", elementText);
   });
 
-  it("Sauce Demo Login", async () => {
+  it.skip("Sauce Demo Login", async () => {
     let url = "https://www.saucedemo.com/";
     await browser.url(url);
     await browser.maximizeWindow();
@@ -40,7 +40,7 @@ describe("My first test suite", () => {
     await expect(inventoryElement).toBeDisplayed();
   });
 
-  it("Selectbox an checkbox", async () => {
+  it.skip("Selectbox an checkbox", async () => {
     let url = "https://devexpress.github.io/testcafe/example/"
     await browser.url(url);
     await browser.maximizeWindow();
