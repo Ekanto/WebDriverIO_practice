@@ -185,11 +185,21 @@ export const config = {
    * @param {object}         browser      instance of created browser/device session
    */
   before: function (capabilities, specs) {
-    browser.addCommand("customFileUpload", async (path) => {
+    browser.addCommand("customFileUpload", async (path, uploadBoxSelector, submitButtonSelector) => {
       const remoteFilePath = await browser.uploadFile(path);
-      await $("#file-upload").setValue(remoteFilePath);
-      await $("#file-submit").click();
+      await $(uploadBoxSelector).setValue(remoteFilePath);
+      await $(submitButtonSelector).click();
     });
+
+    browser.addCommand('getTitleURL', async (url) => {
+        await browser.url(url)
+        return{
+            url : await browser.getUrl(),
+            title : await browser.getTitle()
+            
+        }
+
+    })
   },
   /**
    * Runs before a WebdriverIO command gets executed.
