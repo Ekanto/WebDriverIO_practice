@@ -9,10 +9,8 @@ describe("Advanced testing", async () => {
   });
 
   it('display title and URL', async () => {
-    const result = await browser.getTitleURL("https://the-internet.herokuapp.com/upload");
-    console.log(result)
-    console.log("URL:", result.url);
-    console.log("Title:", result.title);
+    let result  = await browser.getTitleURL("https://the-internet.herokuapp.com/upload")
+    expect(result.title).toEqual("The Internet")
 
   })
 });
