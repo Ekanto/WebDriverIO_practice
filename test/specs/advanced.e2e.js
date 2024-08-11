@@ -32,7 +32,5 @@ describe("Advanced testing", async () => {
     await browser.pause(3000);
   });
 
-  it('Network throttling',  async () => {
-    
-    })
+
 });
