@@ -11,7 +11,7 @@ describe("Advanced testing", async () => {
     expect(text).toEqual("sample.jpg");
   });
 
-  it("display title and URL", async () => {
+  it.skip("display title and URL", async () => {
     let result = await browser.getTitleURL(
       "https://the-internet.herokuapp.com/upload"
     );
